@@ -5,7 +5,8 @@
     "packages/*"
   ],
   "scripts": {
-    "doc:start": "cd packages/dummy-doc/website && yarn start"
+    "doc:start": "cd packages/dummy-doc/website && yarn start",
+    "doc:deploy": "cd packages/dummy-doc/website && yarn publish-gh-pages"
   },
   "devDependencies": {
     "lerna": "^3.13.3"
