@@ -1,0 +1,19 @@
+{
+  "name": "dummy-doc",
+  "version": "0.1.0",
+  "description": "> TODO: description",
+  "author": "Ikuo <eqobar@gmail.com>",
+  "homepage": "",
+  "license": "MIT",
+  "main": "lib/dummy-doc.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  }
+}
