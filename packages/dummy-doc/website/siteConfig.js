@@ -16,32 +16,33 @@ const users = [
     // if it is not '/', like: '/test-site/img/docusaurus.svg'.
     image: '/img/docusaurus.svg',
     infoLink: 'https://www.facebook.com',
-    pinned: true,
-  },
-];
+    pinned: true
+  }
+]
 
 const siteConfig = {
   title: 'Test Site', // Title for your website.
   tagline: 'A website for testing',
-  url: 'https://your-docusaurus-test-site.com', // Your website URL
-  baseUrl: '/', // Base URL for your project */
+  url: 'https://eqot.github.io', // Your website URL
+  baseUrl: '/dummy/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
 
   // Used for publishing and more
-  projectName: 'test-site',
-  organizationName: 'facebook',
+  projectName: 'dummy',
+  organizationName: 'eqot',
   // For top-level user or org sites, the organization is still the same.
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
   //   organizationName: 'JoelMarcey'
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {doc: 'doc1', label: 'Docs'},
-    {doc: 'doc4', label: 'API'},
-    {page: 'help', label: 'Help'},
-    {blog: true, label: 'Blog'},
+    { doc: 'doc1', label: 'Docs' },
+    { doc: 'doc4', label: 'API' },
+    { doc: 'example1', label: 'Examples' },
+    { page: 'help', label: 'Help' },
+    { blog: true, label: 'Blog' }
   ],
 
   // If you have users set above, you add it here:
@@ -55,7 +56,7 @@ const siteConfig = {
   /* Colors for website */
   colors: {
     primaryColor: '#600759',
-    secondaryColor: '#43043e',
+    secondaryColor: '#43043e'
   },
 
   /* Custom fonts for website */
@@ -77,7 +78,7 @@ const siteConfig = {
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
-    theme: 'default',
+    theme: 'default'
   },
 
   // Add custom scripts here that would be placed in <script> tags.
@@ -90,7 +91,7 @@ const siteConfig = {
 
   // Open Graph and Twitter card images.
   ogImage: 'img/docusaurus.png',
-  twitterImage: 'img/docusaurus.png',
+  twitterImage: 'img/docusaurus.png'
 
   // Show documentation's last contributor's name.
   // enableUpdateBy: true,
@@ -101,6 +102,6 @@ const siteConfig = {
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
   //   repoUrl: 'https://github.com/facebook/test-site',
-};
+}
 
-module.exports = siteConfig;
+module.exports = siteConfig

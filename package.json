@@ -4,6 +4,9 @@
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "doc:start": "cd packages/dummy-doc/website && yarn start"
+  },
   "devDependencies": {
     "lerna": "^3.13.3"
   }
