@@ -13,3 +13,15 @@ window.onload = () => {
     discover()
   })
 }
+
+document.getElementById('app').innerHTML = `
+<div>
+  We use Parcel to bundle this sandbox, you can find more info about Parcel
+  <a href="https://parceljs.org" target="_blank" rel="noopener noreferrer">here</a>.
+</div>
+<button id="button2">Discover</button>
+`
+
+document.querySelector('#button2').addEventListener('click', () => {
+  discover()
+})
