@@ -1,19 +1,18 @@
 {
   "name": "dummy-core",
   "version": "0.1.0",
-  "description": "> TODO: description",
-  "author": "Ikuo Terado <ikuo.terado@sony.com>",
-  "homepage": "",
-  "license": "MIT",
-  "main": "lib/index.js",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
-  "files": [
-    "lib"
-  ],
+  "description": "dummy core",
+  "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "start": "parcel index.html --open",
+    "build": "parcel build src/index.ts"
+  },
+  "dependencies": {
+    "@types/node": "^11.13.7",
+    "@types/web-bluetooth": "^0.0.4"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.6.1",
+    "typescript": "^3.4.4"
   }
 }

@@ -5,6 +5,8 @@
     "packages/*"
   ],
   "scripts": {
+    "start": "lerna run start --scope dummy-core",
+    "build": "lerna run build --scope dummy-core",
     "doc:start": "cd packages/dummy-doc/website && yarn start",
     "doc:deploy": "cd packages/dummy-doc/website && yarn publish-gh-pages"
   },
