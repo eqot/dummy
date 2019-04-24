@@ -13,7 +13,10 @@ Check the [documentation](https://docusaurus.io) for how to use Docusaurus.
   window.addEventListener("message", function (e) {
     console.log(e);
     console.log(e.data);
-  });
+    navigator.bluetooth.requestDevice({
+      filters: [{ services: ['10b20100-5b3b-4571-9508-cf3efcd7bbae'] }]
+    });
+  }, false);
   function handleClick() {
     console.log('3');
     navigator.bluetooth.requestDevice({

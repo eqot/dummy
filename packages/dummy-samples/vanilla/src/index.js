@@ -1,17 +1,13 @@
 import './styles.css'
 
 document.getElementById('app').innerHTML = `
-<h1>Hello Vanilla!</h1>
 <div>
-  We use Parcel to bundle this sandbox, you can find more info about Parcel
-  <a href="https://parceljs.org" target="_blank" rel="noopener noreferrer">here</a>.
-
-  <button id="push">Push</button>
+  <button id="discover">Discover</button>
 </div>
 `
 
-document.querySelector('#push').addEventListener('click', async () => {
-  console.log('push')
+document.querySelector('#discover').addEventListener('click', async () => {
+  console.log('discover')
 
-  window.parent.postMessage('foo bar', '*')
+  window.parent.parent.postMessage('discover', '*')
 })
