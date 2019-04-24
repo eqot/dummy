@@ -1,12 +1,4 @@
-import WebBluetooth from './webBluetooth'
-
-const discover = async () => {
-  const peripheral = await WebBluetooth.discover(
-    '10b20100-5b3b-4571-9508-cf3efcd7bbae'
-  )
-
-  peripheral.connect()
-}
+import Cube from './cube'
 
 document.getElementById('app').innerHTML = `
 <div>
@@ -16,6 +8,8 @@ document.getElementById('app').innerHTML = `
 <button id="button">Discover</button>
 `
 
-document.querySelector('#button').addEventListener('click', () => {
-  discover()
+document.querySelector('#button').addEventListener('click', async () => {
+  // const Cube = window.Cube;
+  const cube = await Cube.discover()
+  cube.move([70, 70], 1000)
 })

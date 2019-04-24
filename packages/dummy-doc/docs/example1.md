@@ -9,27 +9,13 @@ Check the [documentation](https://docusaurus.io) for how to use Docusaurus.
 <button id="button">Discovery</button>
 
 <script>
-  console.log('2');
-  window.addEventListener("message", function (e) {
-    console.log(e);
-    console.log(e.data);
-    navigator.bluetooth.requestDevice({
-      filters: [{ services: ['10b20100-5b3b-4571-9508-cf3efcd7bbae'] }]
-    });
+  window.addEventListener("message", async function (event) {
+    if (event.data === 'discover') {
+      const Cube = window.Cube;
+      const cube = await Cube.discover();
+      cube.move([70, 70], 1000);
+    }
   }, false);
-  function handleClick() {
-    console.log('3');
-    navigator.bluetooth.requestDevice({
-      filters: [{ services: ['10b20100-5b3b-4571-9508-cf3efcd7bbae'] }]
-    });
-    // discovery();
-  }
-  function discovery() {
-    navigator.bluetooth.requestDevice({
-      filters: [{ services: ['10b20100-5b3b-4571-9508-cf3efcd7bbae'] }]
-    });
-  }
-  document.querySelector('#button').addEventListener('click', handleClick);
 </script>
 
 ## Lorem

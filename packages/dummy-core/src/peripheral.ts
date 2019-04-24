@@ -29,4 +29,20 @@ export default class Peripheral {
         .catch(reject)
     })
   }
+
+  public read(
+    characteristicUuid: BluetoothCharacteristicUUID
+  ): Promise<DataView> {
+    return this.characteristics[characteristicUuid].readValue()
+  }
+
+  public write(
+    characteristicUuid: BluetoothCharacteristicUUID,
+    data: number[],
+    withResponse: boolean
+  ) {
+    return this.characteristics[characteristicUuid].writeValue(
+      new Uint8Array(data)
+    )
+  }
 }
