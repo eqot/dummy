@@ -1,7 +1,7 @@
 {
   "scripts": {
     "examples": "docusaurus-examples",
-    "start": "NO_PROXY=localhost docusaurus-start",
+    "start": "NO_PROXY=localhost docusaurus-start",    
     "build": "docusaurus-build",
     "publish-gh-pages": "GIT_USER=eqot CURRENT_BRANCH=master USE_SSH=true docusaurus-publish",
     "write-translations": "docusaurus-write-translations",
