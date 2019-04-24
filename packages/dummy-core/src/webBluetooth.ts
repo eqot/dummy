@@ -11,7 +11,7 @@ class WebBluetooth {
 
       return new Peripheral(serviceUuid, device)
     } catch (error) {
-      console.log(error)
+      console.log(error.message)
     }
   }
 }

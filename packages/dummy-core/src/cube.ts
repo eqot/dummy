@@ -7,6 +7,9 @@ class Cube {
     const peripheral = await WebBluetooth.discover(
       '10b20100-5b3b-4571-9508-cf3efcd7bbae'
     )
+    if (!peripheral) {
+      return
+    }
 
     await peripheral.connect()
 
