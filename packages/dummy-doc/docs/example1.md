@@ -16,6 +16,7 @@ Check the [documentation](https://docusaurus.io) for how to use Docusaurus.
     if (event.data === 'discover') {
       const Cube = window.Cube;
       cube = await Cube.discover();
+      console.log('connected');
     }
     if (event.data === 'forward') {
       cube.move([70, 70], 500);
