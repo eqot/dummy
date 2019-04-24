@@ -13,10 +13,5 @@ document.getElementById('app').innerHTML = `
 document.querySelector('#push').addEventListener('click', async () => {
   console.log('push')
 
-  const server = await navigator.bluetooth.requestDevice({
-    filters: [{ services: ['10b20100-5b3b-4571-9508-cf3efcd7bbae'] }]
-  })
-  console.log(server)
-
   window.parent.postMessage('foo bar', '*')
 })
