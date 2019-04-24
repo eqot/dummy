@@ -14,13 +14,20 @@ export default class Peripheral {
   public async connect(): Promise<void> {
     try {
       const server = await this.device.gatt.connect()
+      console.log('0')
 
       const service = await server.getPrimaryService(this.serviceUuid)
+      console.log('1')
 
-      const characteristics = await service.getCharacteristics()
+      const characteristics = await service.getCharacteristics(
+        '10b20102-5b3b-4571-9508-cf3efcd7bbae'
+      )
+      console.log('2')
+
       for (const characteristic of characteristics) {
         this.characteristics[characteristic.uuid] = characteristic
       }
+      console.log('3')
     } catch (error) {
       console.log(error)
     }

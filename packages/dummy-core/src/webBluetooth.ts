@@ -6,7 +6,9 @@ class WebBluetooth {
   ): Promise<Peripheral> {
     try {
       const device = await navigator.bluetooth.requestDevice({
-        filters: [{ services: [serviceUuid] }]
+        acceptAllDevices: false,
+        filters: [{ services: [serviceUuid] }],
+        optionalServices: [serviceUuid]
       })
 
       return new Peripheral(serviceUuid, device)
