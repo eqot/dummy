@@ -1,33 +1,28 @@
 export default class Peripheral {
-  private device: any
-  private characteristics: any
+  private serviceUuid: BluetoothServiceUUID
+  private device: BluetoothDevice
+  private characteristics: {
+    [key: string]: BluetoothRemoteGATTCharacteristic
+  } = {}
 
-  constructor(device: any) {
+  constructor(serviceUuid: BluetoothServiceUUID, device: BluetoothDevice) {
+    this.serviceUuid = serviceUuid
     this.device = device
-
-    console.log(this.device)
   }
 
-  public connect() {
-    return new Promise((resolve, reject) => {
-      this.device.gatt
-        .connect()
-        .then((server: BluetoothRemoteGATTServer) =>
-          server.getPrimaryService('10b20100-5b3b-4571-9508-cf3efcd7bbae')
-        )
-        .then((service: BluetoothRemoteGATTService) =>
-          service.getCharacteristics()
-        )
-        .then((characteristics: BluetoothRemoteGATTCharacteristic[]) => {
-          this.characteristics = {}
-          for (const characteristic of characteristics) {
-            this.characteristics[characteristic.uuid] = characteristic
-          }
+  public async connect(): Promise<void> {
+    try {
+      const server = await this.device.gatt.connect()
 
-          resolve()
-        })
-        .catch(reject)
-    })
+      const service = await server.getPrimaryService(this.serviceUuid)
+
+      const characteristics = await service.getCharacteristics()
+      for (const characteristic of characteristics) {
+        this.characteristics[characteristic.uuid] = characteristic
+      }
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   public read(

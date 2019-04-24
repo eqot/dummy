@@ -1,18 +1,18 @@
 import Peripheral from './peripheral'
 
 class WebBluetooth {
-  public static discover(serviceUuid: string): Promise<Peripheral> {
-    return new Promise((resolve, reject) => {
-      navigator.bluetooth
-        .requestDevice({ filters: [{ services: [serviceUuid] }] })
-        .then((device: any) => {
-          resolve(new Peripheral(device))
-        })
-        .catch((error: any) => {
-          console.warn(error)
-          reject(error)
-        })
-    })
+  public static async discover(
+    serviceUuid: BluetoothServiceUUID
+  ): Promise<Peripheral> {
+    try {
+      const device = await navigator.bluetooth.requestDevice({
+        filters: [{ services: [serviceUuid] }]
+      })
+
+      return new Peripheral(serviceUuid, device)
+    } catch (error) {
+      console.log(error)
+    }
   }
 }
 
