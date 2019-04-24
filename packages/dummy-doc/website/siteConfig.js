@@ -82,11 +82,7 @@ const siteConfig = {
   },
 
   // Add custom scripts here that would be placed in <script> tags.
-  scripts: [
-    '/js/index.js',
-    '/js/index2.js',
-    'https://buttons.github.io/buttons.js'
-  ],
+  scripts: ['/js/dummy-core.js', 'https://buttons.github.io/buttons.js'],
 
   // On page navigation for the current documentation page.
   onPageNav: 'separate',

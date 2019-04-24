@@ -7,13 +7,21 @@ sidebar_label: Example Page
 Check the [documentation](https://docusaurus.io) for how to use Docusaurus.
 
 <button id="button">Discovery</button>
+<button id="forward">Forward</button>
+<button id="backward">Backward</button>
 
 <script>
+  let cube = null
   window.addEventListener("message", async function (event) {
     if (event.data === 'discover') {
       const Cube = window.Cube;
-      const cube = await Cube.discover();
-      cube.move([70, 70], 1000);
+      cube = await Cube.discover();
+    }
+    if (event.data === 'forward') {
+      cube.move([70, 70], 500);
+    }
+    if (event.data === 'backward') {
+      cube.move([-70, -70], 500);
     }
   }, false);
 </script>

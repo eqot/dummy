@@ -2,12 +2,25 @@ import './styles.css'
 
 document.getElementById('app').innerHTML = `
 <div>
-  <button id="discover">Discover</button>
+<button id="discover">Discover</button>
+<button id="forward">Forward</button>
+<button id="backward">Backward</button>
 </div>
 `
 
-document.querySelector('#discover').addEventListener('click', async () => {
-  console.log('discover')
+function send(message) {
+  console.log(message)
+  window.parent.parent.postMessage(message, '*')
+}
 
-  window.parent.parent.postMessage('discover', '*')
+document.querySelector('#discover').addEventListener('click', () => {
+  send('discover')
+})
+
+document.querySelector('#forward').addEventListener('click', () => {
+  send('forward')
+})
+
+document.querySelector('#backward').addEventListener('click', () => {
+  send('backward')
 })
