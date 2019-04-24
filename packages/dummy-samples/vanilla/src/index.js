@@ -10,7 +10,6 @@ document.getElementById('app').innerHTML = `
 
 function send(message) {
   console.log(message)
-  console.log(window.parent.parent)
   window.parent.parent.postMessage(message, '*')
 }
 
