@@ -6,6 +6,7 @@ export default class Peripheral {
   } = {}
 
   constructor(serviceUuid: BluetoothServiceUUID, device: BluetoothDevice) {
+    console.log(device)
     this.serviceUuid = serviceUuid
     this.device = device
   }

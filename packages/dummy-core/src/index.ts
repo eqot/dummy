@@ -1,6 +1,8 @@
 import Cube from './cube'
 
-document.getElementById('app').innerHTML = `
+const element = document.getElementById('app')
+if (element) {
+  element.innerHTML = `
 <div>
   <a href="https://parceljs.org" target="_blank" rel="noopener noreferrer">here</a>.
 </div>
@@ -9,15 +11,17 @@ document.getElementById('app').innerHTML = `
 <button id="backward">Backward</button>
 `
 
-document.querySelector('#button').addEventListener('click', async () => {
-  // const Cube = window.Cube;
-  const cube = await Cube.discover()
+  document.querySelector('#button').addEventListener('click', async () => {
+    // const Cube = window.Cube;
+    const cube = await Cube.discover()
+    console.log(cube)
 
-  document.querySelector('#forward').addEventListener('click', () => {
-    cube.move([70, 70], 500)
-  })
+    document.querySelector('#forward').addEventListener('click', () => {
+      cube.move([70, 70], 500)
+    })
 
-  document.querySelector('#backward').addEventListener('click', () => {
-    cube.move([-70, -70], 500)
+    document.querySelector('#backward').addEventListener('click', () => {
+      cube.move([-70, -70], 500)
+    })
   })
-})
+}
