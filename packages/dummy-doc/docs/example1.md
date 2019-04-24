@@ -6,7 +6,7 @@ sidebar_label: Example Page
 
 Check the [documentation](https://docusaurus.io) for how to use Docusaurus.
 
-<button id="button">Discovery</button>
+<button id="discover">Discover</button>
 <button id="forward">Forward</button>
 <button id="backward">Backward</button>
 
@@ -24,6 +24,10 @@ Check the [documentation](https://docusaurus.io) for how to use Docusaurus.
       cube.move([-70, -70], 500);
     }
   }, false);
+  document.querySelector('#discover').addEventListener('click', async () => {
+    const Cube = window.Cube;
+    cube = await Cube.discover();
+  })
 </script>
 
 ## Lorem
